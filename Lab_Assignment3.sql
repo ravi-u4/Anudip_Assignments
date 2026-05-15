@@ -97,12 +97,12 @@ mysql> SELECT * FROM Enrollment;
 +--------------+-----------+----------+
 4 rows in set (0.00 sec)
 
-mysql> SELECT s.FirstName, c.CourseName
-    -> FROM Enrollment e
-    -> INNER JOIN Student s
-    -> ON e.StudentID = s.StudentID
-    -> INNER JOIN Course c
-    -> ON e.CourseID = c.CourseID;
+mysql> SELECT FirstName, CourseName
+    -> FROM Student
+    -> INNER JOIN Enrollment
+    -> ON Student.StudentID = Enrollment.StudentID
+    -> INNER JOIN Course
+    -> ON Enrollment.CourseID = Course.CourseID;
 +-----------+------------------+
 | FirstName | CourseName       |
 +-----------+------------------+
